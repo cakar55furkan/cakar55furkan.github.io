@@ -34,12 +34,11 @@
                     <img src="assets/flowchart.jpeg"">
                 </div>
                 <p>After manually seeding URLs, the crawler starts visiting documents and inserting the links into the frontier.</p>
-                <p>The cosine similarity formula is used to compare the similarity between a document and the topic specific weight table.</p>
                 <div style="width: 800px; text-align: center;">
                     <img src="assets/relevancy.jpeg" style="width: 500px; margin: 40px;">
                 </div>
-                <p>This formula computes the cosine similarity between topic word table and the document. Location and quantity of the term that document contains affects the relevancy score.</p>
-                <p>Inserted links in the frontier are further checked, ranked, sorted, and eliminated accordingly.</p>
+                <p>This formula computes the cosine similarity between topic word table and the document. Location and quantity of the terms that document contains affects the relevancy score.</p>
+                <p>Inserted links in the frontier are checked, ranked, sorted, and eliminated accordingly, by calculating the link score</p>
                 <p>If a document is evaluated as irrelevant, the crawler doesn't remove the page, nor does it ignore the links within the document. Instead, it is inserted into the irrelevant table to apply the <b>irrelevant-to-relevant</b> algorithm.</p>
                 <div style="width: 800px; text-align: center;">
                     <img src="assets/irr_to_rel.jpeg" style="width: 750px; margin: 40px;">
@@ -73,7 +72,7 @@
                 </div>
                 <p>
                     Example results for intentionally misspelled word. ElasticSearch is able to search misspelled terms by fuzzy search feature.
-                    Location of the searched query in the document is mattered, thus affects the order of the results. Page title or keywords are 
+                    Location of the searched query in the document is important, thus affects the order of the results. Page title or keywords are 
                     more important than the  in the document.
                 </p>
                 
