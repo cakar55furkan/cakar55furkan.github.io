@@ -33,21 +33,22 @@
                 <div class="container">
                     <img src="assets/flowchart.jpeg"">
                 </div>
-                <p>
-                    After seeding URLs manually, crawler starts to visit the documents and insert the links to frontier.
-                    Cosine similarity formula is used to compare the similarity between document and weighted topic word table and the document.
-                    Links that inserted into to frontier for further check, ranked, sorted and eliminited accordingly.
-                    If a document is evaluated as irrelevant, crawler doesn't remove the page and ignore the links inside the document, but insert it to
-                    irrelevant table for apply <b>irrelevant to relevant</b> algortihm
-                </p>
-                <p >
-                    Paragraf 2
-                </p>
-                <p>
-                    Paragraf 3
-                </p>
+                <p>After manually seeding URLs, the crawler starts visiting documents and inserting the links into the frontier.</p>
+                <p>The cosine similarity formula is used to compare the similarity between a document and the weighted topic word table.</p>
+                <p>Inserted links in the frontier are further checked, ranked, sorted, and eliminated accordingly.</p>
+                <p>If a document is evaluated as irrelevant, the crawler doesn't remove the page, nor does it ignore the links within the document. Instead, it is inserted into the irrelevant table to apply the <b>irrelevant-to-relevant</b> algorithm.</p>
                 <div style="width: 800px; text-align: center;">
                     <img src="assets/irr_to_rel.jpeg" style="width: 750px;">
+                </div>
+
+                <p>This chart demonstrates the results of irrelevant-to-relevant algorithm.</p>
+                <p>To discover relevant documents via irrelevant ones, the crawler visits up to 3 consecutive irrelevant documents and ranks their links.</p>
+                <p>According to this logic, Page 1 will not be visited because it can only be reached after 3 consecutive irrelevant documents.</p>
+                <p>However, Page 2 will be reached after 2 consecutive irrelevant documents.</p>
+                <p>The order of visit for Page 3 and Page 4 depends on their link scores.</p>
+                <p>Link scores depend on the quality and quantity of the pages that contain that link, similar to Google Search's PageRank algorithm, as well as similarity between URL and anchor and weighted topic word table.</p>
+                <div style="width: 800px; text-align: center;">
+                    <img src="assets/link_score.jpeg" style="width: 500px;">
                 </div>
             </div>
 
