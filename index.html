@@ -23,16 +23,24 @@
             </div>
             <div style="font-size: larger; font-family: 'Courier New', Courier, monospace;">
 
-                <p class="preventDefault">
-                    This project aims to discover and index the industrial manufacturers and theirs' catalog on the web. <br> <br>
+                <p>
+                    This project aims to discover and index the catalogs of industrial manufacturers and companies on the web. <br><br>
                     To achieve this, a focused crawler must be designed to efficiently crawl the web and index relevant documents. <br><br>
-
-                    
+                    There are several ways to detect the relevance of a document. In this project, weighted topic word table is used.
+                    In short, relevant pages are semi-manually inserted, and keywords are extracted using statistical formulas. <br><br>
+                    The flowchart of the project is shown below.
                 </p>
                 <div class="container">
                     <img src="assets/flowchart.jpeg"">
                 </div>
                 <p>
+                    After seeding URLs manually, crawler starts to visit the documents and insert the links to frontier.
+                    Cosine similarity formula is used to compare the similarity between document and weighted topic word table and the document.
+                    Links that inserted into to frontier for further check, ranked, sorted and eliminited accordingly.
+                    If a document is evaluated as irrelevant, crawler doesn't remove the page and ignore the links inside the document, but insert it to
+                    irrelevant table for apply <b>irrelevant to relevant</b> algortihm
+                </p>
+                <p >
                     Paragraf 2
                 </p>
                 <p>
