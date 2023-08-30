@@ -35,6 +35,10 @@
                 </div>
                 <p>After manually seeding URLs, the crawler starts visiting documents and inserting the links into the frontier.</p>
                 <p>The cosine similarity formula is used to compare the similarity between a document and the topic specific weight table.</p>
+                <div style="width: 800px; text-align: center;">
+                    <img src="assets/relevancy.jpeg" style="width: 500px; margin: 40px;">
+                </div>
+                <p>This formula computes the cosine similarity between topic word table and the document. Location and quantity of the term that document contains affects the relevancy score.</p>
                 <p>Inserted links in the frontier are further checked, ranked, sorted, and eliminated accordingly.</p>
                 <p>If a document is evaluated as irrelevant, the crawler doesn't remove the page, nor does it ignore the links within the document. Instead, it is inserted into the irrelevant table to apply the <b>irrelevant-to-relevant</b> algorithm.</p>
                 <div style="width: 800px; text-align: center;">
@@ -69,7 +73,18 @@
                 </div>
                 <p>
                     Example results for intentionally misspelled word. ElasticSearch is able to search misspelled terms by fuzzy search feature.
+                    Location of the searched query in the document is mattered, thus affects the order of the results. Page title or keywords are 
+                    more important than the  in the document.
                 </p>
+                
+                <h3>
+                   <b>References:</b>
+                </h3>
+                <p style="font-size: medium;">
+                    [1]   Pal, Anshika, Deepak Singh Tomar, and S. C. Shrivastava. "Effective focused crawling based on content and link structure analysis." arXiv preprint arXiv:0906.5034 (2009). <br><br>
+                    [2]   Taylan, Duygu, et al. "Intelligent focused crawler: Learning which links to crawl." 2011 International Symposium on Innovations in Intelligent Systems and Applications. IEEE, 2011.
+                </p>
+                <div style="margin: 100px;"></div>
             </div>
 
         </div>
