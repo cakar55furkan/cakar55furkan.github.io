@@ -18,15 +18,15 @@
                 <h1 style="font-size:30pt;">
                     BBM479-480 Term Project <br> Company Search Engine
                 </h1>
-                <h3 style="font-family: Arial, Helvetica, sans-serif; margin-bottom: 0px;">Furkan Çakar</h3>
-                <h3 style="font-family: Arial, Helvetica, sans-serif; margin-top: 5px;">Advisor: Dr. Engin Demir</h3>
+                <h3 style="font-family: Arial, Helvetica, sans-serif; margin: 0px;">Furkan Çakar</h3>
+                <h3 style="font-family: Arial, Helvetica, sans-serif; margin: 0px; margin-top: 5px;">Advisor: Dr. Engin Demir</h3>
             </div>
             <div style="font-size: larger; font-family: 'Courier New', Courier, monospace;">
 
                 <p>
                     This project aims to discover and index the catalogs of industrial manufacturers and companies on the web. <br><br>
                     To achieve this, a focused crawler must be designed to efficiently crawl the web and index relevant documents. <br><br>
-                    There are several ways to detect the relevance of a document. In this project, weighted topic word table is used.
+                    There are several ways to detect the relevance of a document. In this project, <b>topic specific weight table</b> is used.
                     In short, relevant pages are semi-manually inserted, and keywords are extracted using statistical formulas. <br><br>
                     The flowchart of the project is shown below.
                 </p>
@@ -34,11 +34,11 @@
                     <img src="assets/flowchart.jpeg"">
                 </div>
                 <p>After manually seeding URLs, the crawler starts visiting documents and inserting the links into the frontier.</p>
-                <p>The cosine similarity formula is used to compare the similarity between a document and the weighted topic word table.</p>
+                <p>The cosine similarity formula is used to compare the similarity between a document and the topic specific weight table.</p>
                 <p>Inserted links in the frontier are further checked, ranked, sorted, and eliminated accordingly.</p>
                 <p>If a document is evaluated as irrelevant, the crawler doesn't remove the page, nor does it ignore the links within the document. Instead, it is inserted into the irrelevant table to apply the <b>irrelevant-to-relevant</b> algorithm.</p>
                 <div style="width: 800px; text-align: center;">
-                    <img src="assets/irr_to_rel.jpeg" style="width: 750px;">
+                    <img src="assets/irr_to_rel.jpeg" style="width: 750px; margin: 40px;">
                 </div>
 
                 <p>This chart demonstrates the results of irrelevant-to-relevant algorithm.</p>
@@ -46,10 +46,30 @@
                 <p>According to this logic, Page 1 will not be visited because it can only be reached after 3 consecutive irrelevant documents.</p>
                 <p>However, Page 2 will be reached after 2 consecutive irrelevant documents.</p>
                 <p>The order of visit for Page 3 and Page 4 depends on their link scores.</p>
-                <p>Link scores depend on the quality and quantity of the pages that contain that link, similar to Google Search's PageRank algorithm, as well as similarity between URL and anchor and weighted topic word table.</p>
+                <p><b>Link scores</b> depend on the quality and quantity of the pages that contain that link, similar to Google Search's PageRank algorithm, as well as similarity between URL, anchor and weighted topic word table.</p>
                 <div style="width: 800px; text-align: center;">
-                    <img src="assets/link_score.jpeg" style="width: 500px;">
+                    <img src="assets/link_score.jpeg" style="width: 500px; margin: 40px;">
                 </div>
+
+                <p>
+                    After visiting and indexing relevant documents, 
+                    the TF-IDF algorithm is applied. This algorithm 
+                    detects the featured keywords in the document by 
+                    comparing them to other documents. The resulting 
+                    words are the more frequently used terms. 
+                    These keywords are saved in the index for field boosting during search operations.
+                </p>
+                <p>
+                    To extract the entities like location and organization, SpaCy's Named Entity Recognition module is used. 
+                    Results of the NER were not satisfactory, but entities are still indexed for improving search results.
+                    
+                </p>
+                <div style="width: 800px; text-align: center;">
+                    <img src="assets/search.png" style="width: 500px; margin: 40px;">
+                </div>
+                <p>
+                    Example results for intentionally misspelled word. ElasticSearch is able to search misspelled terms by fuzzy search feature.
+                </p>
             </div>
 
         </div>
