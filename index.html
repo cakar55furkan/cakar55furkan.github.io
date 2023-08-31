@@ -27,7 +27,7 @@
                     This project aims to discover and index the catalogs of industrial manufacturers and companies on the web. <br><br>
                     To achieve this, a focused crawler must be designed to efficiently crawl the web and index relevant documents. <br><br>
                     There are several ways to detect the relevance of a document. In this project, <b>topic specific weight table</b> is used.
-                    In short, relevant pages are semi-manually inserted, and keywords are extracted using statistical formulas. <br><br>
+                    In short, several relavant pages are visited by using general purpose search engine, and keywords are extracted using statistical formulas. <br><br>
                     The flowchart of the project is shown below.
                 </p>
                 <div class="container">
@@ -38,7 +38,7 @@
                     <img src="assets/relevancy.jpeg" style="width: 500px; margin: 40px;">
                 </div>
                 <p>This formula computes the cosine similarity between topic word table and the document. Location and quantity of the terms that document contains affects the relevancy score.</p>
-                <p>Inserted links in the frontier are checked, ranked, sorted, and eliminated accordingly, by calculating the link score</p>
+                <p>Inserted links in the frontier are checked, ranked, sorted, and eliminated accordingly, by calculating the link score.</p>
                 <p>If a document is evaluated as irrelevant, the crawler doesn't remove the page, nor does it ignore the links within the document. Instead, it is inserted into the irrelevant table to apply the <b>irrelevant-to-relevant</b> algorithm.</p>
                 <div style="width: 800px; text-align: center;">
                     <img src="assets/irr_to_rel.jpeg" style="width: 750px; margin: 40px;">
